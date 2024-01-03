@@ -1,0 +1,16 @@
+
+context('Dev Finances', ()=>{
+  it('Cadastrar entradas', () => { 
+
+    cy.visit('https://dev-finance.netlify.app/')
+
+    cy.get('#transaction .button').click() //id + classe
+    cy.get('#description').type('Mesada') //somente id
+    cy.get('[name=amount]').type('12') //atributo
+    cy.get('[type=date]').type('2024/01/03') //atributo
+    cy.get('button').contains('Salvar').click() //seleciona o tipo button que tem apenas como valor o salvar
+
+
+  });
+
+});
